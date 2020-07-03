@@ -309,6 +309,11 @@ a:hover{
 }
 
 
+.social:hover{
+  transform: scale(1.5);
+  transition: .3s;
+}
+
 
 /* Media */
 
@@ -376,6 +381,7 @@ a:hover{
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 0.5fr;
     font-size: 12px;
+    margin-bottom: 5%;
   }
 
   .footer__menu{
