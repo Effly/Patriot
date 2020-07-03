@@ -1,0 +1,295 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #000000;
+}
+
+ul {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  position: relative;
+  display: block;
+  margin: 0 10px;
+  padding: 5px 10px;
+  color: #aaa;
+  font-size: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  overflow: hidden;
+}
+ul li a::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #01f31a;
+  transition: 0.5s;
+}
+ul li a:hover {
+  color: #fff;
+}
+ul li a:hover::before {
+  animation: animate .5s linear forwards; 
+}
+
+@keyframes animate {
+  0% {
+    top: calc(50% - 2px);
+    left: -100%;
+    height: 4px;
+    z-index: 1;
+  }
+  50% {
+    top: calc(50% - 2px);
+    left: 0;
+    height: 4px;
+    z-index: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+  }
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: grid;
+    justify-content:center;
+    grid-template-columns: repeat(5,30vh);
+    grid-template-rows: repeat(10,10vh);
+
+}
+
+.logo{
+    width: 1350px;
+    height: 800px;
+    grid-row: 2/8;
+    grid-column: 1/6;
+    z-index: 100;
+}
+
+.imgChair{
+    width: 900px;
+    height: 800px;
+    grid-column: 2/5;
+    grid-row: 2;
+    
+}
+.chair{
+    width: 600px;
+}
+.btn{
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: white;
+    background: #01f31a;
+    box-shadow: 0 8px 15px rgba(0,0,0,.1);
+    transition: .3s;
+
+    z-index: 1001;
+    grid-row: 10;
+    grid-column: 5;
+  }
+  .btn:hover {
+    background: #01f31a;
+    /* box-shadow: 0 15px 20px rgba(46,229,157,.4); */
+    color: white;
+    transform: translateY(-7px);
+    cursor: pointer;
+
+  }
+
+.about{
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: 80vh 70vh;
+    
+    justify-content: center;
+    
+}
+
+.about__text{
+    color: #aaa;
+    font-family: sans-serif;
+    align-self: center;
+    text-align: justify;
+    font-size: 16px;
+}
+.about__pic{
+    justify-self: center;
+}
+
+/* tabs */
+.sponsor{
+    color: #aaa;
+    display: grid;
+    justify-content: center;
+}
+.tabs {
+    font-size: 0;
+    
+    margin-bottom: 3%;
+    display: grid;
+    grid-template-columns: repeat(4,38vh);
+    justify-content: center;
+
+  }
+
+  .tabs>input[type="radio"] {
+    display: none;
+  }
+
+  .tabs>div {
+    
+    display: none;
+    
+    padding: 10px 15px;
+    font-size: 16px;
+    grid-column: 1/5;
+  }
+
+
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3,
+  #tab-btn-4:checked~#content-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-gap: 3%;
+    
+    
+  }
+
+  .tabs>label {
+    display: grid;
+    color: #aaa;
+    justify-items: center;
+    user-select: none;
+    
+    
+    
+    padding: 2px 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    cursor: pointer;
+    
+    top: 1px;
+  }
+
+  
+  .tabs>input[type="radio"]:checked+label {
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    
+  }
+
+
+/* Редакт лейблов и дескриптов табов */
+.tournamLogo{
+  width: 126px;
+  height: 126px;
+}
+.cont__pic{
+  margin-top: 3%;
+  width: 500x;
+  height: 500px;
+}
+.cont__text{
+  color: #aaa;
+  font-family: sans-serif;
+  align-self: center;
+  text-align: justify;
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+footer{
+  padding: 3%;
+  background-color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border-top: 1px solid white;
+  color: white;
+  
+}
+.footer__logo img{
+  margin-bottom: 15%;
+}
+.footer__pol p {
+  margin-bottom: 0%;
+}
+.footer__menu{
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr;
+  justify-self: center;
+  padding-top:5% ;
+  grid-gap: 150%;
+}
+
+.footer__info{
+  justify-self: center;
+}
+
+.footer__phone p{
+  justify-self: end;
+  font-size: 2rem;
+}
+
+
+.footer__adress p{
+  justify-self: end;
+  font-size: 0.8rem;
+}
+
+
+.footer__social {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+}
+a:hover{
+  color: #01f31a;
+  transition: 0.5s;
+}
